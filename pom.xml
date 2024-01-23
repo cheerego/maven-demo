@@ -43,6 +43,12 @@
             <id>nexus-tencentyun</id>
             <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
             <name>Nexus tencentyun</name>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
 
 <!--    这里会使用 settings.xml 中配置的账号密码-->
