@@ -1,0 +1,24 @@
+<!-- 一般情况 maven 的通用 settings.xml 在 .m2 文件夹下, 项目内 settings.xml 也可以进行设置，优先级更高 -->
+<settings>
+    <mirrors>
+        <mirror>
+            <id>nexus-tencentyun</id>
+            <!-- 此配置避免了本仓库制品的拉取流量被切换到腾讯云镜像源，保证您在使用镜像加速的同时可以从本仓库拉取制品 -->
+            <mirrorOf>*,!cheerego-devops-maven</mirrorOf>
+            <name>Nexus tencentyun</name>
+            <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+        </mirror>
+    </mirrors>
+
+
+    <!-- 请妥善保管好您的配置，不要随意分享给他人 -->
+    <!-- 该秘钥会在给配置在 pom.xml 中的私有 maven 制品库使用-->
+    <servers>
+        <server>
+            <id>cheerego-devops-maven</id>
+            <username>yourusername</username>
+            <password>yourpassword</password>
+        </server>
+    </servers>
+
+</settings>

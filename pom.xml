@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <groupId>org.hahaha</groupId>
+    <artifactId>maven-deploy</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+
+
+    <dependencies>
+<!--        gson maven 中央仓库依赖-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+<!--        coding maven 制品库私有依赖-->
+        <dependency>
+            <groupId>com.hekangning.deloy</groupId>
+            <artifactId>maven</artifactId>
+            <version>0.1</version>
+        </dependency>
+
+    </dependencies>
+
+
+<!--    配置代理仓库-->
+<!--    腾讯云的源配置在第一位-->
+<!--    私有源放在腾讯云的源的下面-->
+<!--    这样配置后 gson 会先去腾讯云源中找，找不到就再去私有源中找-->
+<!--    即 gson 会在腾讯云源中找到， com.hekangning.deloy:maven 这个包会在私有源中找到-->
+    <repositories>
+        <repository>
+            <id>nexus-tencentyun</id>
+            <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+            <name>Nexus tencentyun</name>
+        </repository>
+
+<!--    这里会使用 settings.xml 中配置的账号密码-->
+<!--    必须与 settings.xml 的 id 一致-->
+        <repository>
+            <id>cheerego-devops-maven</id>
+            <name>maven</name>
+            <url>https://cheerego-maven.pkg.coding.net/repository/devops/maven/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+
+
+
+<!--     mvn deploy -s settings.xml 执行推送-->
+<!--     maven deploy 命令将 maven 包推送的目的仓库-->
+<!--     如果不需要推送 maven 包可以不配置-->
+    <distributionManagement>
+        <repository>
+            <!--必须与 settings.xml 的 id 一致-->
+            <id>cheerego-devops-maven</id>
+            <name>maven</name>
+            <url>https://cheerego-maven.pkg.coding.net/repository/devops/maven/</url>
+        </repository>
+    </distributionManagement>
+
+</project>
