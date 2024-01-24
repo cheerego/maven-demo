@@ -41,7 +41,7 @@
     <repositories>
         <repository>
             <id>nexus-tencentyun</id>
-            <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+            <url>https://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
             <name>Nexus tencentyun</name>
             <releases>
                 <enabled>true</enabled>
