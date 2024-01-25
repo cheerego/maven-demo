@@ -26,6 +26,8 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
+                <!--    这里会使用 server 中配置的账号密码-->
+                <!--    必须与 server 的 id 一致-->
                 <repository>
                     <id>cheerego-devops-maven</id>
                     <name>maven</name>
