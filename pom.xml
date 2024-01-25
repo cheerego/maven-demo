@@ -33,40 +33,6 @@
     </dependencies>
 
 
-<!--    配置代理仓库-->
-<!--    腾讯云的源配置在第一位-->
-<!--    私有源放在腾讯云的源的下面-->
-<!--    这样配置后 gson 会先去腾讯云源中找，找不到就再去私有源中找-->
-<!--    即 gson 会在腾讯云源中找到， com.hekangning.deloy:maven 这个包会在私有源中找到-->
-    <repositories>
-        <repository>
-            <id>nexus-tencentyun</id>
-            <url>https://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
-            <name>Nexus tencentyun</name>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-
-<!--    这里会使用 settings.xml 中配置的账号密码-->
-<!--    必须与 settings.xml 的 id 一致-->
-        <repository>
-            <id>cheerego-devops-maven</id>
-            <name>maven</name>
-            <url>https://cheerego-maven.pkg.coding.net/repository/devops/maven/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-
 
 
 <!--     mvn deploy -s settings.xml 执行推送-->

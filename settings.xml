@@ -1,9 +1,8 @@
-<!-- 一般情况 maven 的通用 settings.xml 在 .m2 文件夹下, 项目内 settings.xml 也可以进行设置，优先级更高 -->
-<settings>
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
 
-
-    <!-- 请妥善保管好您的配置，不要随意分享给他人 -->
-    <!-- 该秘钥会在给配置在 pom.xml 中的私有 maven 制品库使用-->
     <servers>
         <server>
             <id>cheerego-devops-maven</id>
@@ -12,4 +11,42 @@
         </server>
     </servers>
 
+    <profiles>
+        <profile>
+            <id>repository</id>
+            <repositories>
+                <repository>
+                    <id>tencent-maven</id>
+                    <name>TencentCloud Maven</name>
+                    <url>https://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>cheerego-devops-maven</id>
+                    <name>maven</name>
+                    <url>https://cheerego-maven.pkg.coding.net/repository/devops/maven/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>maven2-plugin</id>
+                    <url>https://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>repository</activeProfile>
+    </activeProfiles>
 </settings>
