@@ -41,9 +41,9 @@
     <distributionManagement>
         <repository>
             <!--必须与 settings.xml 的 id 一致-->
-            <id>cheerego-devops-maven</id>
+            <id>xxxx-devops-maven</id>
             <name>maven</name>
-            <url>https://cheerego-maven.pkg.coding.net/repository/devops/maven/</url>
+            <url>https://xxxx-maven.pkg.coding.net/repository/devops/maven/</url>
         </repository>
     </distributionManagement>
 

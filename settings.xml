@@ -5,7 +5,7 @@
 
     <servers>
         <server>
-            <id>cheerego-devops-maven</id>
+            <id>xxxx-devops-maven</id>
             <username>yourusername</username>
             <password>yourpassword</password>
         </server>
@@ -26,10 +26,12 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
+                <!--    这里会使用 server 中配置的账号密码-->
+                <!--    必须与 server 的 id 一致-->
                 <repository>
-                    <id>cheerego-devops-maven</id>
+                    <id>xxxx-devops-maven</id>
                     <name>maven</name>
-                    <url>https://cheerego-maven.pkg.coding.net/repository/devops/maven/</url>
+                    <url>https://xxxx-maven.pkg.coding.net/repository/devops/maven/</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
