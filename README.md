@@ -8,6 +8,7 @@
 
 * 编译 `mvn package -s ./settings.xml` (具体命令以实际情况为准)。
 * 发布 maven 包 `maven deploy -s ./settings.xml` (具体命令以实际情况为准)。
+* 如果发现 `mvn package -s ./settings.xml` 不生效，可以将 `-s` 改成 `-gs`，`mvn package -gs ./settings.xml`
 
 # 发现问题
 
